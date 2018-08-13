@@ -28,8 +28,8 @@ if (NODE_ENV === 'production') {
   server = app;
 }
 
-server.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+server.listen(PORT || 3000, () => {
+  console.log(`Server listening on port ${PORT || 3000}`);
 });
 
 module.exports = app;
