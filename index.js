@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const express = require('express');
@@ -19,8 +20,8 @@ let server = null;
 
 if (NODE_ENV === 'production') {
   const options = {
-    key: path.resolve(CERTS_PATH, 'privkey.pem'),
-    cert: path.resolve(CERTS_PATH, 'cert.pem'),
+    key: fs.readFileSync(path.resolve(CERTS_PATH, 'privkey.pem')),
+    cert: fs.readFileSync(path.resolve(CERTS_PATH, 'cert.pem')),
   };
   server = https.createServer(options, app);
 } else {
