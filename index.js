@@ -4,9 +4,7 @@ const express = require('express');
 
 require('dotenv').config();
 
-const PORT = process.env.PORT || 3000;
-const NODE_ENV = process.env.NODE_ENV || 'development';
-const CERTS_PATH = process.env.CERT_PATH;
+const { NODE_ENV, PORT, CERTS_PATH } = process.env;
 
 const app = express();
 
