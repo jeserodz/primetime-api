@@ -7,6 +7,10 @@ const app = express();
 
 app.use('/api', require('./routes/api'));
 
+app.get('/', (req, res) => {
+  res.send('primetime-api');
+});
+
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
